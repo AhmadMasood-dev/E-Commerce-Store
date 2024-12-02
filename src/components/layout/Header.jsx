@@ -2,7 +2,7 @@ import { NavLink } from "react-router-dom";
 
 function Header() {
   return (
-    <header className="bg-white shadow">
+    <header className="shadow">
       <div className="container px-4 mx-auto">
         <nav className="flex items-center justify-between py-4">
           {/* Logo */}
@@ -30,13 +30,26 @@ function Header() {
             className="items-center hidden space-x-6 lg:flex"
           >
             <ul className="flex items-center space-x-6">
-              <li className="font-semibold uppercase transition text-dark hover:text-primary">
-                <NavLink to="/">Home</NavLink>
+              <li>
+                <NavLink
+                  to="/"
+                  className={({ isActive }) =>
+                    `font-bold uppercase transition text-dark hover:text-primary ${
+                      isActive ? "text-primary" : ""
+                    }`
+                  }
+                >
+                  Home
+                </NavLink>
               </li>
               <li className="relative group">
                 <NavLink
                   to="/productdetail"
-                  className="font-semibold uppercase transition text-dark hover:text-primary"
+                  className={({ isActive }) =>
+                    `font-bold uppercase transition text-dark hover:text-primary ${
+                      isActive ? "text-primary" : ""
+                    }`
+                  }
                 >
                   Products
                 </NavLink>
@@ -45,7 +58,11 @@ function Header() {
               <li>
                 <NavLink
                   to="cart"
-                  className="font-semibold uppercase transition text-dark hover:text-primary"
+                  className={({ isActive }) =>
+                    `font-bold uppercase transition text-dark hover:text-primary ${
+                      isActive ? "text-primary" : ""
+                    }`
+                  }
                 >
                   Cart
                 </NavLink>
@@ -56,7 +73,11 @@ function Header() {
               <li>
                 <NavLink
                   to="/signin"
-                  className="font-semibold uppercase transition text-dark hover:text-primary"
+                  className={({ isActive }) =>
+                    `font-bold uppercase transition text-dark hover:text-primary ${
+                      isActive ? "text-primary" : ""
+                    }`
+                  }
                 >
                   Login
                 </NavLink>
@@ -65,7 +86,11 @@ function Header() {
             <form className="ml-6">
               <button
                 type="submit"
-                className="flex items-center justify-center transition rounded-full bg-medium w-9 h-9 hover:bg-light"
+                className={({ isActive }) =>
+                  `font-bold uppercase transition text-dark hover:text-primary ${
+                    isActive ? "text-primary" : ""
+                  }`
+                }
               >
                 🔍
               </button>

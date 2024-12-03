@@ -1,6 +1,7 @@
 import { Link } from "react-router-dom";
 import useGetProducts from "../hooks/useGetProducts";
 import Spinner from "../ui/Spinner";
+import HeroSection from "../components/HeroSection";
 
 function ProductDetail() {
   const { data: products, isLoading } = useGetProducts();
@@ -8,6 +9,7 @@ function ProductDetail() {
 
   return (
     <div className="bg-white">
+      <HeroSection />
       <div className="px-4 py-16 mx-auto max-w-7xl sm:px-6 sm:py-24 lg:px-8">
         <h2 className="text-4xl font-bold tracking-tight text-primary">
           Our Products

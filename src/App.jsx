@@ -28,11 +28,11 @@ function App() {
           path: "/cart",
           element: <Cart />,
         },
-        {
-          path: "/signin",
-          element: <SignIn />,
-        },
       ],
+    },
+    {
+      path: "/signin",
+      element: <SignIn />,
     },
   ]);
   return <RouterProvider router={router} />;

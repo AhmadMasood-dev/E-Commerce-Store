@@ -2,7 +2,7 @@ import { NavLink } from "react-router-dom";
 
 function Header() {
   return (
-    <header className="shadow">
+    <header className="shadow bg-[#D4D2D3]">
       <div className="container px-4 mx-auto">
         <nav className="flex items-center justify-between py-4">
           {/* Logo */}

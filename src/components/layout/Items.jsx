@@ -39,7 +39,7 @@ function Items() {
         </div>
         <Link to="/productdetail">
           <Button
-            name="AllProducts → "
+            name="All Products → "
             styles={
               "text-white hover:text-dark py-2 px-3 w-36 mt-10  rounded bg-primary hover:bg-secondary transition ease-in-out duration-300 border-1 hover:border-medium border-primary font-semibold text-lg"
             }

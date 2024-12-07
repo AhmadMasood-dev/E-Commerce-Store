@@ -1,14 +1,28 @@
 import Button from "../../components/generic/Button";
+import { useCart } from "../../context/CartContext";
+
 import useGetProducts from "../../hooks/useGetProducts";
 import Spinner from "../../ui/Spinner";
 import { FaStar, FaRegStar } from "react-icons/fa";
 
-function product({ id }) {
+function ItemDetail({ id }) {
   const { data, isLoading } = useGetProducts(`/${id}`);
   const { title, image, price, description, rating } = data;
   console.log(data);
   if (isLoading) return <Spinner />;
 
+  const { dispatch } = useCart();
+  const addToCartHandler = () => {
+    dispatch({
+      type: "AddItem",
+      payload: {
+        id: id, // Use the id passed as a prop
+        title: title,
+        price: price,
+        image: image,
+      },
+    });
+  };
   return (
     <section class="text-dark body-font overflow-hidden h-full">
       <div class="container px-5 my-5 mx-auto">
@@ -42,6 +56,7 @@ function product({ id }) {
             </div>
             <Button
               name="Add to Cart"
+              onClick={addToCartHandler}
               styles="mx-auto w-full text-white bg-primary border-0 py-2 px-6 focus:outline-none hover:bg-light transition duration-300 ease-in-out rounded"
             />
           </div>
@@ -51,4 +66,4 @@ function product({ id }) {
   );
 }
 
-export default product;
+export default ItemDetail;

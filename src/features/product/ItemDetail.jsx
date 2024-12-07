@@ -24,35 +24,35 @@ function ItemDetail({ id }) {
     });
   };
   return (
-    <section class="text-dark body-font overflow-hidden h-full">
-      <div class="container px-5 my-5 mx-auto">
-        <div class="lg:w-3/4 mx-auto flex flex-wrap text-left h-1/2">
+    <section className="h-full overflow-hidden text-dark body-font">
+      <div className="container px-5 mx-auto my-5">
+        <div className="flex flex-wrap mx-auto text-left lg:w-3/4 h-1/2">
           <img
             alt="ecommerce"
-            class="  w-[350px]  h-[400] object-fit  rounded"
+            className="  w-[350px]  h-[400] object-fit  rounded"
             // lg:w-1/2 md:h-1/2
             src={image}
           />
-          <div class="lg:w-1/2 w-full  lg:py-6 mt-6 ml-auto gap-10 flex flex-col">
+          <div className="flex flex-col w-full gap-10 mt-6 ml-auto lg:w-1/2 lg:py-6">
             <div>
-              <h1 class="text-dark text-xl  font-medium mb-3">{title}</h1>
-              <div class="flex mb-4">
-                <span class="flex items-center">
+              <h1 className="mb-3 text-xl font-medium text-dark">{title}</h1>
+              <div className="flex mb-4">
+                <span className="flex items-center">
                   <FaStar className="w-4 h-4 text-yellow-500" />
                   <FaStar className="w-4 h-4 text-yellow-500" />
                   <FaStar className="w-4 h-4 text-yellow-500" />
                   <FaStar className="w-4 h-4 text-yellow-500" />
                   <FaRegStar className="w-4 h-4 text-yellow-500" />
 
-                  <span class="text-dark ml-3">{`${rating.rate} out of 5`}</span>
+                  <span className="ml-3 text-dark">{`${rating.rate} out of 5`}</span>
                 </span>
               </div>
             </div>
 
-            <div class="">
+            <div className="">
               <p className="font-semibold leading-7">Description:</p>
-              <p class="leading-relaxed mb-5">{description}</p>
-              <span class=" font-medium text-2xl text-dark">${price}</span>
+              <p className="mb-5 leading-relaxed">{description}</p>
+              <span className="text-2xl font-medium text-dark">${price}</span>
             </div>
             <Button
               name="Add to Cart"

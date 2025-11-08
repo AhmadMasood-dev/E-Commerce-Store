@@ -1,3 +1,4 @@
+import toast from "react-hot-toast";
 import Button from "../../components/generic/Button";
 import { useCart } from "../../context/CartContext";
 
@@ -22,6 +23,7 @@ function ItemDetail({ id }) {
         image: image,
       },
     });
+    toast.success("Item added to cart");
   };
   return (
     <section className="h-full overflow-hidden text-dark body-font">
